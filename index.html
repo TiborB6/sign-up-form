@@ -6,14 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
+    <link rel="stylesheet" href="normalize.css">
     <link rel="stylesheet" href="styles.css">
     <script defer src="app.js"></script>
+    <script defer src="validation.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;1,100&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="content">
         <div class="picture">
-            <img src="./img/halie-west-25xggax4bSA-unsplash.jpg">
-            <img src="./img/odin-lined.png">
+            <img id="bg-img" src="./img/halie-west-25xggax4bSA-unsplash.jpg">
+            <div class="odin">
+                <img src="./img/odin-lined.png">
+                <p>ODIN</p>
+            </div>
         </div>
         <div class="sign-up">
             <div class="text">
@@ -22,28 +31,40 @@
                 <p>You <span style="font-style: italic;"> know </span> want to.</p>
             </div>
             <div class="sign-up-form">
-                <form action="#" method="post">
-                    <label for="inputs">Let's do this!</label>
+                <form id="sign-up" action="#">
+                    <label id="for-inputs" for="inputs">Let's do this!</label>
                     <fieldset id="inputs">
-                        <label for="first_name">First Name</label>
-                        <input type="text" id="first_name">
-
-                        <label for="last_name">Last Name</label>
-                        <input type="text" id="last_name">
-
-                        <label for="email">Email</label>
-                        <input type="email" id="email">
-
-                        <label for="phone">Phone Number</label>
-                        <input type="tel" id="phone">
-
-                        <label for="psw">Password</label>
-                        <input type="password" id="psw">
-
-                        <label for="con_psw">Confirm Password</label>
-                        <input type="password" id="con_psw">
+                        <div class="wrapper">
+                            <div class="input-container">
+                                <label for="first_name">First Name*</label>
+                                <input type="text" id="first_name"
+                                required minlength="1" maxlength="100" title="Please enter your first name">
+                            </div>
+                            <div class="input-container">
+                                <label for="last_name">Last Name*</label>
+                                <input type="text" id="last_name" 
+                                required minlength="1" maxlength="100" title="Please enter your last name">
+                            </div>
+                            <div class="input-container">
+                                <label for="email">Email*</label>
+                                <input type="email" id="email"
+                                required minlength="1" maxlength="100" title="Please enter your email">
+                            </div> 
+                            <div class="input-container">
+                                <label for="phone">Phone Number*</label>
+                                <input type="tel" id="phone" title="Please enter your Phone number">
+                            </div>
+                            <div class="input-container">
+                                <label for="psw">Password*</label>
+                                <input type="password" id="psw">
+                            </div>
+                            <div class="input-container">
+                                <label for="con_psw">Confirm Password*</label>
+                                <input type="password" id="con_psw">
+                            </div>
+                        </div>
                     </fieldset>
-                    <button type="submit">Create Account</button>
+                    <button id="submit-btn" type="submit">Create Account</button>
                 </form>
                 <p>
                     Already have an account? <a href="#">Log in</a>
